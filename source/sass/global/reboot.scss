@@ -2,6 +2,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
@@ -16,7 +18,7 @@ html {
   font-weight: 400;
   font-size: $fz-default;
   line-height: 24px;
-  font-family: $ff-placeholder;
+  font-family: $font-family-main;
   color: $color-default-black;
 
   -webkit-font-smoothing: antialiased;
@@ -126,4 +128,8 @@ button,
 [type="reset"],
 [type="submit"] {
   appearance: none;
+}
+
+ul {
+  list-style: none;
 }

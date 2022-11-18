@@ -3,7 +3,7 @@
 <head>
 
   @@include("source/html/base/head.html")
-  <title>ProjectName — Главная</title>
+  <title>Mobius</title>
 
 </head>
 <body>
@@ -12,32 +12,188 @@
     @@include("build/img/sprite_auto.svg")
   </div>
 
-  <div class="wrapper">
-    <-- для внутренних страниц используйте "headerActiveLinkIndex": 0\1\2 --> 
-    @@include("source/html/base/header.html", {
-      "index": true
-    })
-
-    <main>
-      <div class="container">
-        <p><a href="#" data-open-modal="feedback">modal--feedback link</a></p>
-        <p><a href="#" data-open-modal="success">modal--success link</a></p>
+  <section class="banner">
+    <div class="container">
+      <img src="img/svg/vk-logo.svg" class="banner__logo" alt="VK" width="40" height="40" />
+      <div class="banner__wrapper">
+        <div class="banner__text">
+          <h1 class="banner__title">Команда VK на&nbsp;Mobius 2022</h1>
+          <p class="banner__subtitle">VK&nbsp;&mdash; это более 200 технологичных проектов, больше 10&nbsp;000 сотрудников и&nbsp;миллион возможностей проявить себя.</p>
+          <p class="banner__description">Каждый день миллионы пользователей общаются <b>ВКонтакте</b> и&nbsp;<b>Одноклассниках</b>, обедают вместе с&nbsp;<b>Delivery Club</b>, играют в&nbsp;игры от&nbsp;<b>MY.GAMES</b>, продают вещи на&nbsp;<b>Юле</b> и&nbsp;становятся умнее с&nbsp;<b>GeekBrains</b> и&nbsp;<b>Skillbox</b>. Команда VK&nbsp;делает современные и&nbsp;быстрые интернет-сервисы, доступные каждому.</p>
+        </div>
+        <img src="img/svg/banner-people.svg" class="banner__pic" width="553" height="545">
       </div>
-    </main>
+    </div>
+  </section>
 
-    @@include("source/html/base/footer.html")
+  <section class="activity">
+    <div class="container">
+      <h2 class="activity__title section-title">Наши активности</h2>
+      <ul class="activity__cards">
+        <li class="activity__card">
+          <img src="img/svg/activity-card-1.svg" class="activity__card-pic" width="210" height="210">
+          <h3 class="activity__card-title section-title">VK Mini Race</h3>
+          <p class="activity__card-description">IT-гонка от&nbsp;команды VK! Быстро и&nbsp;правильно отвечайте на&nbsp;вопросы по&nbsp;iOS или Andriod и&nbsp;финишируйте раньше всех.</p>
+          <div class="activity__card-timetable">
+            <h3 class="activity__card-timetable-title">Расписание раундов</h3>
+            <ul class="activity__card-timetable-list">
+              <li class="activity__card-date">25 мая — iOS</li>
+              <li class="activity__card-date">26 мая — Android</li>
+              <li class="activity__card-date">27 мая — iOS и Android</li>
+            </ul>
+          </div>
+          <a target="_blank" href="https://vk.com/app7845387" class="activity__card-link btn">Поехали</a>
+          <p class="activity__card-warning">Пройти игру можно только один раз в&nbsp;день! В&nbsp;21:00 определяем в&nbsp;рейтинге топ-5 победителей и&nbsp;дарим им&nbsp;любой стикерпак ВКонтакте и&nbsp;мягкую игрушку, а&nbsp;лучший игрок дня получит VK&nbsp;Капсулу Мини с&nbsp;Марусей.</p>
+        </li>
+        <li class="activity__card">
+          <img src="img/svg/activity-card-2.svg" class="activity__card-pic" width="210" height="210">
+          <h3 class="activity__card-title section-title">Сode in the Dark</h3>
+          <p class="activity__card-description">Сверстайте экран по&nbsp;макету за&nbsp;10&nbsp;минут и&nbsp;почти вслепую, не&nbsp;видя промежуточный результат. Победит участник, чей экран максимально совпадёт с&nbsp;образцом.</p>
+          <div class="activity__card-timetable">
+            <h3 class="activity__card-timetable-title">Расписание раундов</h3>
+            <ul class="activity__card-timetable-list">
+              <li class="activity__card-date">25 мая в 17:00</li>
+              <li class="activity__card-date">26 мая в 20:00</li>
+              <li class="activity__card-date">27 мая в 20:00 (финал)</li>
+            </ul>
+          </div>
+          <a target="_blank" href="https://vk.com/app6013442_-147982856?form_id=1#form_id=1" class="activity__card-link btn">Записаться</a>
+          <p class="activity__card-warning">В&nbsp;первые два дня конференции проведём несколько раундов Code in&nbsp;the Dark. Все победители смогут сразиться в&nbsp;финале и&nbsp;выиграть суперпризы! Победители первого тура получат мягкую игрушку, а&nbsp;финалисты&nbsp;&mdash; наушники Apple AirPods Max, наушники AirPods Pro или VK&nbsp;Капсулу Мини с&nbsp;Марусей.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-    @@include("source/html/base/modal.html", {
-      "name": "feedback"
-    })
+  <section class="prizes">
+    <div class="container">
+      <h2 class="prizes__title section-title">Призы</h2>
+      <ul class="prizes__list">
+        <li class="prizes__prize">
+          <img src="img/content/prizes-prize-1.png" class="prizes__prize-pic">
+          <p class="prizes__prize-name">VK&nbsp;Капсула Мини с&nbsp;Марусей</p>
+        </li>
+        <li class="prizes__prize">
+          <img src="img/content/prizes-prize-2.png" class="prizes__prize-pic">
+          <p class="prizes__prize-name">Apple AirPods </p>
+        </li>
+        <li class="prizes__prize">
+          <img src="img/content/prizes-prize-3.png" class="prizes__prize-pic">
+          <p class="prizes__prize-name">Мягкие игрушки</p>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-    @@include("source/html/base/modal.html", {
-      "name": "success",
-      "fitContent": true,
-      "noScale": true,
-      "mod": "some-mod"
-    })
-  </div>
+  <section class="utility">
+    <div class="container">
+      <h2 class="utility__title section-title">Полезности от команды VK</h2>
+      <div class="utility__divide">
+        <h3 class="utility__divide-title">Доклады на Mobius</h3>
+        <div class="utility__divide-cards">
+          <a target="_blank" href="https://live.jugru.org/video?v=MTAwMTI2ijIwMDAwMTI2ijA" class="utility__card utility__card--green">
+            <h4 class="utility__card-title">Незнание стандартов не&nbsp;освобождает от&nbsp;ответственности: Юникод, Swift, Строки</h4>
+            <p class="utility__card-description">Tech Talk</p>
+            <p class="utility__card-date">25 мая в 18:30</p>
+          </a>
+          <a target="_blank" href="https://live.jugru.org/video?v=MTAwMTI2ijIwMDAwMTM3ijA" class="utility__card utility__card--green">
+            <h4 class="utility__card-title">Где мой миелофон? Рассуждаем о&nbsp;будущем разработки через 20&nbsp;лет</h4>
+            <p class="utility__card-description">BoF-сессия (дискуссия)</p>
+            <p class="utility__card-date">25 мая в 19:15</p>
+          </a>
+          <a target="_blank" href="https://live.jugru.org/video?v=MTAwMTI2iiM4ODIyijA" class="utility__card utility__card--green">
+            <h4 class="utility__card-title">Вращаем невращаемое, или Как повернуть экран звонка</h4>
+            <p class="utility__card-description">Доклад</p>
+            <p class="utility__card-date">26 мая в 17:30</p>
+          </a>
+        </в>
+      </div>
+      <div class="utility__divide">
+        <h3 class="utility__divide-title">Митап VK Tech Talks Android</h3>
+        <div class="utility__divide-cards">
+          <a href="https://vk.com/vkteam?w=wall-147415323_12076&z=video-147415323_456239695%2F408da56b4d8cb09850%2Fpl_post_-147415323_12076" class="utility__card utility__card--blue">
+            <img src="img/svg/utility-card-play.svg" class="utility__card-pic">
+            <h4 class="utility__card-title">Как не&nbsp;надо интегрировать SDK</h4>
+            <p class="utility__card-who">Игорь Климов</p>
+          </a>
+          <a href="https://vk.com/vkteam?w=wall-147415323_12076&z=video-147415323_456239696%2F54482483e0d02eba49%2Fpl_post_-147415323_12076" class="utility__card utility__card--blue">
+            <img src="img/svg/utility-card-play.svg" class="utility__card-pic">
+            <h4 class="utility__card-title">Интеграция GraphQL в&nbsp;Android-приложение</h4>
+            <p class="utility__card-who">Артур Илькаев</p>
+          </a>
+          <a href="https://vk.com/vkteam?w=wall-147415323_12076&z=video-147415323_456239697%2Fpl_post_-147415323_12076" class="utility__card utility__card--blue">
+            <img src="img/svg/utility-card-play.svg" class="utility__card-pic">
+            <h4 class="utility__card-title">Frida для взлома и&nbsp;отладки приложений</h4>
+            <p class="utility__card-who">Ахмед Шериев</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="subscription">
+    <div class="container">
+      <div class="subscription__wrapper">
+        <div class="subscription__text">
+          <h2 class="subscription__title">Чтобы быть в&nbsp;курсе наших мероприятий и&nbsp;новостей, подписывайтесь на&nbsp;VK&nbsp;Team</h2>
+          <div class="subscription__links">
+            <a target="_blank" href="https://vk.com/vkteam" class="subscription__link">
+              <img src="img/svg/subscription.svg" class="subscription__link-pic" width="60" height="60">
+            </a>
+            <a target="_blank" href="https://vk.com/vkteam" class="subscription__link btn">Подписаться</a>
+          </div>
+        </div>
+        <img src="img/svg/subscription-people.svg" class="subscription__pic" width="528" height="495">
+      </div>
+    </div>
+  </section>
+
+  <section class="join">
+    <div class="container">
+      <div class="join__wrapper">
+        <img src="img/svg/join-human.svg" class="join__pic" width="554" height="534">
+        <div class="join__text">
+          <h2 class="join__title section-title">Присоединяйтесь к&nbsp;команде&nbsp;VK</h2>
+          <div class="join__links">
+            <a target="_blank" href="http://team.vk.company/vacancy/?specialty=17&town=&tag=2245&search=&utm_source=conf_mobius" class="join__link btn btn--white btn--big">Android</a>
+            <a target="_blank" href="http://team.vk.company/vacancy/?specialty=17&town=&tag=2243&search=&utm_source=conf_mobius" class="join__link btn btn--white btn--big">iOS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacts">
+    <div class="container">
+      <h2 class="contacts__title section-title">Контакты</h2>
+      <div class="contacts__card">
+        <div class="contacts__card-wrapper">
+          <img src="img/content/contact.png" class="contacts__card-photo">
+          <div class="contacts__card-text">
+            <h3 class="contacts__card-name">Анастасия Мокрушина</h3>
+            <p class="contacts__card-position">DevRel</p>
+            <div class="contacts__card-contacts">
+              <a target="_blank" href="https://t.me/a_mokrushina" class="contacts__card-contacts-link">
+                <img src="img/svg/tg-logo.svg" class="contacts__card-contacts-link-pic" width="40" height="40" />
+              </a>
+              <a target="_blank" href="https://vk.com/mokrushinkaa" class="contacts__card-contacts-link">
+                <img src="img/svg/vk-logo-blue.svg" class="contacts__card-contacts-link-pic" width="40" height="40" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <p class="contacts__card-hint">
+          Можете прийти ко&nbsp;мне в&nbsp;личку с&nbsp;любым вопросом
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <img src="img/svg/footer-bg.svg" class="footer__bg" width="1440" height="210">
+      <img src="img/svg/footer-people.svg" class="footer__pic" width="590" height="626">
+    </div>
+  </footer>
 
   <script src="js/vendor.min.js"></script>
   <script src="js/main.min.js"></script>

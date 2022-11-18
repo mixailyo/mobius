@@ -19,29 +19,480 @@
 // Blocks
 // ---------------------------------
 
-@import "blocks/header";
-@import "blocks/main-nav";
-@import "blocks/footer";
-@import "blocks/modal";
 @import "blocks/btn";
 
-// ---------------------------------
+// 
+.section-title {
+  font-weight: 500;
+  @include adaptiveDesktopToMobile('font-size', 56, 28);
+  line-height: 1.18;
+}
 
-// ❗❗❗ запрещено использовать изображения в css, касается как jpg \ png, так и svg
+// 
 
-// ❗ обязательно используйте @media для отключения ховеров на тач устройствах
-// но не используем для текстовых полей ( input, textarea )
-/* @media (hover: hover), screen and (min-width: 0\0) {
-  &:hover,
-  &:focus {
-    color: $color-default-white;
+.banner {
+  background-image: url('../../img/svg/banner-bg.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 25px;
+  @include adaptiveDesktopToMobile('padding-bottom', 85, 45);
+  color: $color-default-white;
+}
+.banner__wrapper {
+  display: grid;
+  grid-template-columns: 1.26fr 1fr;
+  @include adaptiveDesktopToMobile('gap', 50, 0);
+  @include adaptiveDesktopToMobile('margin-top', 50, 30);
+
+  @include vp-1023 {
+    display: block
   }
-} */
+}
+.banner__text {
+}
+.banner__logo {
+}
+.banner__title {
+  @include adaptiveDesktopToMobile('font-size', 96, 40);
+  line-height: 1;
+  font-weight: 400;
+}
+.banner__subtitle {
+  @include adaptiveDesktopToMobile('margin-top', 50, 30);
+  @include adaptiveDesktopToMobile('font-size', 24, 20);
+  line-height: 1.42;
+  max-width: 600px;
+  @include adaptiveDesktopToMobile('padding-left', 20, 10);
+  position: relative;
 
-// адаптив пишем внутри каждого класса (смотрим container.scss)
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: $color-default-white;
+  }
+}
+.banner__description {
+  @include adaptiveDesktopToMobile('margin-top', 30, 20);
+  line-height: 1.78;
+  max-width: 640px;
 
-// для фикса проблем с vh на iOS в сборке подключен скрипт
-// используя vh на проекте задавайте их также как в примере в utils.scss
+  @include adaptiveDesktopToMobile('font-size', 18, 16);
+}
+.banner__pic {
+  @include vp-1023 {
+    display: none;
+  }
+}
 
-// для любых transition обязательно указывайте transition-property
-// transition: $trans-default ❌ ---> transition: color $trans-default ✅
+// 
+.activity {
+  @include adaptiveDesktopToMobile('padding-top', 56, 28);
+  @include adaptiveDesktopToMobile('padding-bottom', 56, 28);
+  text-align: center;
+}
+.activity__title {
+  @include adaptiveDesktopToMobile('margin-bottom', 80, 35);
+}
+.activity__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @include adaptiveDesktopToMobile('gap', 90, 30);
+
+  @include vp-1023 {
+    overflow: auto;
+    @include adaptiveDesktopToMobile('margin-left', -40, -20);
+    @include adaptiveDesktopToMobile('margin-right', -40, -20);
+    @include adaptiveDesktopToMobile('padding-left', 40, 20);
+    @include adaptiveDesktopToMobile('padding-right', 40, 20);
+  }
+}
+.activity__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:first-child {
+    position: relative;
+
+    .activity__card-description {
+      max-width: 460px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      @include adaptiveDesktopToMobile('right', -45, -15);
+      width: 1px;
+      height: 90%;
+      background-color: #E3E3E3;
+
+      @include vp-1023 {
+        display: none;
+      }
+    }
+  }
+}
+.activity__card-pic {
+  margin: 0 auto 20px;
+}
+.activity__card-title {
+  @include adaptiveDesktopToMobile('margin-bottom', 30, 20);
+  white-space: nowrap;
+}
+.activity__card-description {
+  max-width: 480px;
+  line-height: 1.78;
+  @include adaptiveDesktopToMobile('font-size', 18, 16);
+
+  @media screen and (max-width: 1075px) {
+    min-height: 123px;
+  }
+
+  @media screen and (max-width: 1075px) {
+    min-height: 123px;
+  }
+
+  @media screen and (max-width: 800px) {
+    min-height: 150px;
+  }
+}
+.activity__card-timetable {
+  @include adaptiveDesktopToMobile('margin-top', 30, 20);
+}
+.activity__card-timetable-title {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.14;
+  @include adaptiveDesktopToMobile('font-size', 28, 22);
+}
+.activity__card-timetable-list {
+  margin-top: 20px;
+}
+.activity__card-date {
+  border: 1.2px solid rgba(0, 0, 0, 0.9);
+  border-radius: 8px;
+  width: 280px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  @include adaptiveDesktopToMobile('font-size', 22, 18);
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+.activity__card-link {
+  @include adaptiveDesktopToMobile('margin-top', 60, 35);
+}
+.activity__card-warning {
+  @include adaptiveDesktopToMobile('margin-top', 60, 35);
+  @include adaptiveDesktopToMobile('font-size', 14, 12);
+  line-height: 1.14;
+  opacity: 0.5;
+  max-width: 550px;
+}
+
+// 
+.prizes {
+  @include adaptiveDesktopToMobile('padding-top', 56, 28);
+  @include adaptiveDesktopToMobile('padding-bottom', 56, 28);
+  background-image: url('../../img/svg/prizes-bg.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.prizes__title {
+}
+.prizes__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 25px;
+
+  @include vp-767 {
+    grid-template-columns: auto;
+  }
+}
+.prizes__prize {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.prizes__prize-pic {
+}
+.prizes__prize-name {
+  font-weight: 500;
+  @include adaptiveDesktopToMobile('font-size', 28, 20);
+  line-height: 1.14;
+  max-width: 250px;
+  min-height: 64px;
+  margin-top: auto;
+}
+
+// 
+.utility {
+  @include adaptiveDesktopToMobile('padding-top', 56, 28);
+  @include adaptiveDesktopToMobile('padding-bottom', 80, 28);
+  text-align: center;
+}
+.utility__title {
+}
+.utility__divide {
+  @include adaptiveDesktopToMobile('margin-top', 70, 35);
+}
+.utility__divide-title {
+  font-weight: 500;
+  @include adaptiveDesktopToMobile('font-size', 38, 26);
+  line-height: 1.11;
+}
+.utility__divide-cards {
+  @include adaptiveDesktopToMobile('margin-top', 56, 28);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @include vp-1023 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include vp-767 {
+    grid-template-columns: auto
+  }
+}
+.utility__card {
+  @include adaptiveDesktopToMobile('padding-top', 56, 28);
+  @include adaptiveDesktopToMobile('padding-bottom', 56, 28);
+  @include adaptiveDesktopToMobile('padding-left', 40, 20);
+  @include adaptiveDesktopToMobile('padding-right', 40, 20);
+  color: $color-default-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 380px;
+
+  &--green {
+    background-image: url('../../img/svg/utility-card-bg-green.svg');
+  }
+  &--blue {
+    background-image: url('../../img/svg/utility-card-bg-blue.svg');
+  }
+
+  @include vp-1023 {
+    min-height: unset;
+  }
+}
+.utility__card-description {
+
+}
+.utility__card-title {
+  font-weight: 500;
+  @include adaptiveDesktopToMobile('font-size', 28, 20);
+  line-height: 1.14;
+  @include adaptiveDesktopToMobile('margin-bottom', 40, 20);
+}
+.utility__card-description {
+  margin-top: auto;
+  font-weight: 500;
+  @include adaptiveDesktopToMobile('font-size', 22, 18);
+}
+.utility__card-date {
+  @include adaptiveDesktopToMobile('margin-top', 40, 20);
+  border: 1.2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  width: 210px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.utility__card
+.utility__card-pic {
+  @include adaptiveDesktopToMobile('margin-top', 15, 10);
+  @include adaptiveDesktopToMobile('margin-bottom', 30, 20);
+}
+.utility__card-who {
+}
+
+// 
+.subscription {
+  @include adaptiveDesktopToMobile('padding-top', 84, 40);
+  @include adaptiveDesktopToMobile('padding-bottom', 40, 20);
+  background-image: url('../../img/svg/subscription-bg.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.subscription__wrapper {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  @include adaptiveDesktopToMobile('gap', 60, 30);
+
+  @include vp-1023 {
+    grid-template-columns: auto;
+  }
+}
+.subscription__text {
+}
+.subscription__title {
+  font-weight: 500;
+  @include adaptiveDesktopToMobile('font-size', 38, 26);
+  line-height: 1.11;
+  color: $color-default-white;
+}
+.subscription__links {
+  @include adaptiveDesktopToMobile('margin-top', 50, 25);
+  display: flex;
+  align-items: center;
+}
+.subscription__link {
+  &:not(:last-child) {
+    flex: 0 0 60px;
+    margin-right: 25px;
+
+    @include vp-767 {
+      display: none
+    }
+  }
+}
+.subscription__link-pic {
+}
+.subscription__pic {
+  @include adaptiveDesktopToMobile('margin-top', -120, -100);
+
+  @include vp-1023 {
+    margin: 0 0 0 auto;
+  }
+}
+
+// 
+.join {
+  @include adaptiveDesktopToMobile('padding-top', 60, 30);
+  background-image: url('../../img/svg/join-bg.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.join__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.20fr;
+  @include adaptiveDesktopToMobile('gap', 130, 35);
+
+  @include vp-1023 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.join__pic {
+  @include adaptiveDesktopToMobile('margin-top', -84, 200);
+
+  @include vp-1023 {
+    margin: 0;
+  }
+}
+.join__text {
+  @include adaptiveDesktopToMobile('padding-bottom', 84, 40);
+
+  @include vp-1023 {
+    padding: 0;
+  }
+}
+.join__title {
+  color: $color-default-white;
+}
+.join__links {
+  @include adaptiveDesktopToMobile('margin-top', 50, 25);
+}
+.join__link {
+  width: 320px;
+  @include adaptiveDesktopToMobile('height', 77, 60);
+  @include adaptiveDesktopToMobile('font-size', 27, 22);
+
+  &:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  @include vp-1023 {
+    width: 100%;
+  }
+}
+
+// 
+.contacts {
+  @include adaptiveDesktopToMobile('padding-top', 56, 28);
+  @include adaptiveDesktopToMobile('padding-bottom', 56, 28);
+  z-index: 1;
+}
+.contacts__title {
+}
+.contacts__card {
+  @include adaptiveDesktopToMobile('margin-top', 56, 28);
+}
+.contacts__card-wrapper {
+  display: flex;
+  align-items: center;
+}
+.contacts__card-photo {
+  @include adaptiveDesktopToMobile('margin-right', 30, 20);
+}
+.contacts__card-text {
+  font-weight: 500;
+}
+.contacts__card-name {
+  @include adaptiveDesktopToMobile('font-size', 38, 26);
+  line-height: 1.11;
+}
+.contacts__card-position {
+  font-size: 24px;
+  line-height: 1.42;
+  @include adaptiveDesktopToMobile('font-size', 24, 20);
+}
+.contacts__card-contacts {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.contacts__card-contacts-link {
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+.contacts__card-contacts-link-pic {
+}
+.contacts__card-hint {
+  margin-top: 30px;
+  background-image: url('../../img/svg/hint.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 23px 19px 16px 33px;
+  width: fit-content;
+  color: $color-default-white;
+  max-width: 303px;
+  font-size: 18px;
+  line-height: 1.44;
+  z-index: 2;
+  position: relative;
+}
+
+// 
+.footer {
+  position: relative;
+  pointer-events: none;
+}
+.footer__bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-height: 210px;
+  object-fit: cover;
+}
+.footer__pic {
+  z-index: 1;
+  position: relative;
+  margin-left: auto;
+  @include adaptiveDesktopToMobile('margin-top', -400, -15);
+}
